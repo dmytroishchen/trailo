@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Placeholder">
+  <rect width="800" height="600" fill="#e8e6e1"/>
+  <rect x="1" y="1" width="798" height="598" fill="none" stroke="#c9c5bc" stroke-width="2"/>
+  <text x="400" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#6b6560">Add your photo</text>
+  <text x="400" y="322" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#8a847c">images/moves/your-file.jpg</text>
+</svg>
