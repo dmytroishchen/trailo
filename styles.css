@@ -496,107 +496,221 @@ a:hover {
   color: var(--text-muted);
 }
 
-/* Pricing */
-.pricing-disclaimer {
-  max-width: 640px;
-  margin: -1rem auto 2rem;
-  text-align: center;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-.pricing-grid {
-  display: grid;
-  gap: 1.25rem;
-  align-items: stretch;
-}
-
-@media (min-width: 800px) {
-  .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.price-card {
+/* How we move */
+.how-section {
   position: relative;
-  padding: 1.75rem 1.5rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(165deg, var(--surface) 0%, var(--bg-alt) 42%, var(--surface) 100%);
+  border-block: 1px solid var(--border);
+  overflow: hidden;
 }
 
-.price-card h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1.1rem;
+.how-section::before {
+  content: "";
+  position: absolute;
+  inset: -40% 55% auto -20%;
+  height: 70%;
+  background: radial-gradient(ellipse, var(--accent-soft) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.price {
+.how-intro {
+  position: relative;
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-bottom: 2.75rem;
+  text-align: center;
+}
+
+.how-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.how-timeline {
+  position: relative;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 44rem;
+}
+
+.how-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.65rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), rgba(31, 111, 84, 0.2));
+}
+
+.how-timeline-item {
+  position: relative;
+  padding: 0 0 1.75rem 2.15rem;
+}
+
+.how-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.how-dot {
+  position: absolute;
+  left: calc(0.65rem + 1.5px - 7px);
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--accent-soft);
+}
+
+.how-timeline-body h3 {
   font-family: var(--font-display);
-  font-size: 2.1rem;
-  font-weight: 600;
-  margin: 0;
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
   color: var(--text);
 }
 
-.price .currency {
-  font-size: 1.1rem;
-  vertical-align: super;
-  margin-right: 0.05em;
-}
-
-.price-note {
-  margin: 0 0 1.25rem;
-  font-size: 0.9rem;
+.how-timeline-body p {
+  margin: 0;
+  font-size: 0.98rem;
   color: var(--text-muted);
+  line-height: 1.6;
 }
 
-.price-card ul {
-  margin: 0 0 1.5rem;
-  padding: 0;
-  list-style: none;
-  flex: 1;
+.how-timeline-body a {
+  font-weight: 600;
 }
 
-.price-card li {
+.how-bento {
   position: relative;
-  padding-left: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 800px) {
+  .how-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .how-card-feature {
+    grid-column: 1 / -1;
+  }
+
+  .how-card-dark {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .how-card-accent {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .how-card-local {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+.how-card {
+  margin: 0;
+  padding: 1.5rem 1.35rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 8px 32px rgba(21, 32, 24, 0.06);
+}
+
+.how-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 0 0 0.65rem;
+  color: var(--text);
+}
+
+.how-card p {
+  margin: 0;
+  font-size: 0.98rem;
   color: var(--text-muted);
+  line-height: 1.6;
 }
 
-.price-card li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.75;
+.how-card-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.4rem;
 }
 
-.price-card-featured {
+.how-pills {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.how-pills li {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+}
+
+.how-card-dark {
+  background: linear-gradient(145deg, #143d30 0%, #1a5240 50%, #0f2e24 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #e8f2ec;
+}
+
+.how-card-dark h3 {
+  color: #fff;
+}
+
+.how-card-dark p {
+  color: rgba(232, 242, 236, 0.88);
+}
+
+.how-card-dark .btn-primary {
+  margin-top: 1.25rem;
+}
+
+.how-card-cta {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.how-card-accent {
+  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 55%);
   border-color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent-soft);
 }
 
-.badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  margin: 0;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-soft);
-  padding: 0.3rem 0.5rem;
-  border-radius: 999px;
+.nav-email {
+  font-size: 0.82rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 899px) {
+  .nav-email {
+    font-size: 0.8rem;
+  }
 }
 
 /* Reviews */
